@@ -11,7 +11,7 @@ const PostsList = ({posts}) => {
 
     const { sortedPosts } = useFilters(posts, {
         sort: sorting,
-        filter: {name: 'title', value: 'dolorem'}
+        filter: {name: 'description', value: 'tempore'}
     })
 
     if(!posts || !sortedPosts) {
