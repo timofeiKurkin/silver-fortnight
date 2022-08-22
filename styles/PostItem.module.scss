@@ -1,0 +1,19 @@
+@import "variables";
+
+.item {
+    margin: 25px 0 25px 0;
+    border-radius: 30px;
+    border: 3px solid $blue;
+    padding: 15px 30px;
+
+    &__title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    &__description {
+        font-size: 18px;
+    }
+    &__title, &__descriptoin {
+        color: $dark-blue;
+    }
+}
