@@ -1,4 +1,4 @@
-import PostsList from "../components/PostsList";
+import Posts from "../components/Posts";
 import {IPost} from "../types";
 
 export const getStaticProps = async () => {
@@ -22,7 +22,7 @@ export default function Home({posts}) {
         <div className={'title'}>
           <h1>Список постов</h1>
         </div>
-        <PostsList posts={posts}/>
+          <Posts posts={posts}/>
       </div>
 
   )
