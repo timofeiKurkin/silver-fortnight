@@ -2,7 +2,7 @@ import styles from '../styles/RadioButton.module.scss'
 
 const RadioButton = ({name, text, sorting, setSorting}) =>  {
 
-    const changeTest = (e) => {
+    const changeSorting = (e) => {
         setSorting(e.target.name)
     }
 
@@ -11,7 +11,7 @@ const RadioButton = ({name, text, sorting, setSorting}) =>  {
             <input type="radio"
                    name={name}
                    checked={sorting === name}
-                   onChange={changeTest}
+                   onChange={changeSorting}
             />
             <label htmlFor={name}>{text}</label>
         </div>
