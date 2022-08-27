@@ -5,6 +5,14 @@ export const useFilters = (posts: IPost[], {sort, filter}: IOptions): {sortedPos
     const currentPosts = useRef<IPost[]>(posts)
 
     useMemo(() => {
+        if(!filter.name || !filter.value) return null
+
+        currentPosts.current = posts.filter(post => {
+            return post[filter.name].includes(filter.value)
+        })
+    }, [currentPosts, filter.name, filter.value])
+
+    useMemo(() => {
         switch (sort) {
             case "ASC":
                 currentPosts.current = [...currentPosts.current].sort((n1, n2) => n1.id - n2.id)
@@ -15,13 +23,7 @@ export const useFilters = (posts: IPost[], {sort, filter}: IOptions): {sortedPos
         }
     }, [sort, currentPosts])
 
-    useMemo(() => {
-        if(!filter.name || !filter.value) return null
 
-        currentPosts.current = currentPosts.current.filter(post => {
-            return post[filter.name].includes(filter.value)
-        })
-    }, [currentPosts, filter.name, filter.value])
 
     return { sortedPosts: currentPosts.current }
 }
